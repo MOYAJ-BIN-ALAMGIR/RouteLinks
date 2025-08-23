@@ -27,6 +27,9 @@ app.MapStaticAssets();
 //    pattern: "{controller}/{action}",
 //    defaults: new {Controller = "USA"}    
 //    );
+app.MapControllerRoute(
+    name: "sales",
+    pattern: "sales/{controller=Home}/{action=Index}");
 
 app.MapControllerRoute(
     name: "stock",
