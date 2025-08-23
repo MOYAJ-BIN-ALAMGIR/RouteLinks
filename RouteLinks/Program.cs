@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +21,14 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+app.MapControllerRoute(
+    name: "defaultonly",
+    pattern: "{controller}/{action}",
+    defaults: new {Controller = "USA"}    
+    );
+
+
 
 app.MapControllerRoute(
     name: "default",
