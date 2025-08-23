@@ -22,13 +22,20 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+//app.MapControllerRoute(
+//    name: "defaultonly",
+//    pattern: "{controller}/{action}",
+//    defaults: new {Controller = "USA"}    
+//    );
+
 app.MapControllerRoute(
-    name: "defaultonly",
-    pattern: "{controller}/{action}",
-    defaults: new {Controller = "USA"}    
-    );
+    name: "stock",
+    pattern: "Stock/{action}",
+    defaults: new { controller = "Home" });
 
-
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
