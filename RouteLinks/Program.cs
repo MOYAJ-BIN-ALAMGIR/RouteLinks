@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.Configure<RouteOptions>(options =>
 {
     options.AppendTrailingSlash = true;
+    options.LowercaseUrls = true;
 });
 
 var app = builder.Build();
