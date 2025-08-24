@@ -33,6 +33,11 @@ app.MapStaticAssets();
 //    pattern: "{controller}/{action}",
 //    defaults: new {Controller = "USA"}    
 //    );
+
+app.MapControllerRoute(
+    name: "area",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}");
+
 app.MapControllerRoute(
     name: "sales",
     pattern: "sales/{controller=Home}/{action=Index}");
@@ -50,6 +55,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+
+
 
 
 app.Run();
