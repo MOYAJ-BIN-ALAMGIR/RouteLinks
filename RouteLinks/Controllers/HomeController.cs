@@ -15,6 +15,9 @@ namespace RouteLinks.Controllers
 
         public IActionResult Index()
         {
+
+            string url = Url.Action("CustomVariable", "Home", new { id = 100 });
+
             return View();
         }
 
