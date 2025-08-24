@@ -7,6 +7,9 @@
 <a asp-controller="Product" asp-action="Index" asp-route-id="100">Pass 100 to the id segment</a>
 <a asp-controller="Product" asp-action="Index" asp-route-id="100" asp-route-name="Apple">Query String</a>
 <a asp-route="sales">Sales</a>
+<a asp-controller="Product" asp-action="List" asp-fragment="Printing">
+    URL Fragment
+</a>
 
 <p>@Url.Action("List", "Product", new{ id = 10})</p>
 
